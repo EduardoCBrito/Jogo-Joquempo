@@ -2,7 +2,6 @@
 {
     public class OcultarJogada
     {
-        // Lê a jogada ocultando o que é digitado
         public static string LerJogadaOculta()
         {
             string entrada = "";
@@ -10,7 +9,7 @@
 
             while (true)
             {
-                tecla = Console.ReadKey(intercept: true); // intercept = true => não mostra no console
+                tecla = Console.ReadKey(intercept: true); 
 
                 if (tecla.Key == ConsoleKey.Enter)
                     break;
