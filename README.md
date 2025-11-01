@@ -13,7 +13,7 @@ Cada jogada é representada por uma entidade rica, responsável por conter sua p
 Isso significa que a regra de quem vence está dentro da própria classe, mantendo o código limpo, 
 coeso e aderente a princípios de DDD e SOLID.
 
-O jogo usa uma Factory para criar a jogada correta a partir de um enum `TipoDaJogada`, 
+O jogo usa uma Factory para criar a jogada correta a partir de um enum `TipoDaJogada` 
 e identificando as escolhas dos jogadores via CLI, ocultando as respostas dos jogadores só revelando no final da partida.
 
 ---
