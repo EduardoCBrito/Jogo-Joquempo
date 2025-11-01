@@ -1,72 +1,72 @@
-## Jogo JoquempÙ extendido de 15 Tipos ó .NET C# (CLI)
+## Jogo Joquemp√¥ extendido de 15 Tipos ‚Äî .NET C# (CLI)
 
-Este projeto È uma vers„o expandida e balanceada do cl·ssico JoquempÙ (Pedra, Papel e Tesoura), 
+Este projeto √© uma vers√£o expandida e balanceada do cl√°ssico Joquemp√¥ (Pedra, Papel e Tesoura), 
 agora com 15 tipos de jogadas.  
-Desenvolvido em .NET 9 (C#), o jogo È executado no CLI (linha de comando) e 
-permite que dois jogadores reais escolham suas jogadas digitando um n˙mero de 0 a 14.
+Desenvolvido em .NET 9 (C#), o jogo √© executado no CLI (linha de comando) e 
+permite que dois jogadores reais escolham suas jogadas digitando um n√∫mero de 0 a 14.
 
 ---
 
 ## Conceito
 
-Cada jogada È representada por uma entidade rica, respons·vel por conter sua prÛpria lÛgica de vitÛria.  
-Isso significa que a regra de quem vence est· dentro da prÛpria classe, mantendo o cÛdigo limpo, 
-coeso e aderente a princÌpios de DDD e SOLID.
+Cada jogada √© representada por uma entidade rica, respons√°vel por conter sua pr√≥pria l√≥gica de vit√≥ria.  
+Isso significa que a regra de quem vence est√° dentro da pr√≥pria classe, mantendo o c√≥digo limpo, 
+coeso e aderente a princ√≠pios de DDD e SOLID.
 
 O jogo usa uma Factory para criar a jogada correta a partir de um enum `TipoDaJogada`, 
-e um switch-case simples apenas para identificar as escolhas dos jogadores via CLI.
+e identificando as escolhas dos jogadores via CLI, ocultando as respostas dos jogadores s√≥ revelando no final da partida.
 
 ---
 
-## Tipos disponÌveis
+## Tipos dispon√≠veis
 
-| CÛdigo | Tipo     |
+| C√≥digo | Tipo     |
 |:------:|:----------|
 | 0 | Pedra |
 | 1 | Fogo |
 | 2 | Tesoura |
 | 3 | Cobra |
 | 4 | Humano |
-| 5 | ¡rvore |
+| 5 | √Årvore |
 | 6 | Lobo |
 | 7 | Esponja |
 | 8 | Papel |
 | 9 | Ar |
-| 10 | ¡gua |
-| 11 | Drag„o |
-| 12 | DemÙnio |
-| 13 | Trov„o |
+| 10 | √Ågua |
+| 11 | Drag√£o |
+| 12 | Dem√¥nio |
+| 13 | Trov√£o |
 | 14 | Arma |
 
 ---
 
-## Regras oficiais do JoquempÙ 15
+## Regras oficiais do Joquemp√¥ 15
 
-Cada tipo vence os 7 prÛximos tipos e perde para os 7 anteriores, de forma circular.  
-Por exemplo, ìPedraî vence os tipos de **1 atÈ 7** (voltando ao inÌcio se necess·rio).
+Cada tipo vence os 7 pr√≥ximos tipos e perde para os 7 anteriores, de forma circular.  
+Por exemplo, ‚ÄúPedra‚Äù vence os tipos de **1 at√© 7** (voltando ao in√≠cio se necess√°rio).
 
-### Tabela completa de vitÛrias
+### Tabela completa de vit√≥rias
 
 | Tipo | Vence |
 |------|-------|
-| **Pedra (0)** | Fogo (1), Tesoura (2), Cobra (3), Humano (4), ¡rvore (5), Lobo (6), Esponja (7) |
-| **Fogo (1)** | Tesoura (2), Cobra (3), Humano (4), ¡rvore (5), Lobo (6), Esponja (7), Papel (8) |
-| **Tesoura (2)** | Cobra (3), Humano (4), ¡rvore (5), Lobo (6), Esponja (7), Papel (8), Ar (9) |
-| **Cobra (3)** | Humano (4), ¡rvore (5), Lobo (6), Esponja (7), Papel (8), Ar (9), ¡gua (10) |
-| **Humano (4)** | ¡rvore (5), Lobo (6), Esponja (7), Papel (8), Ar (9), ¡gua (10), Drag„o (11) |
-| **¡rvore (5)** | Lobo (6), Esponja (7), Papel (8), Ar (9), ¡gua (10), Drag„o (11), DemÙnio (12) |
-| **Lobo (6)** | Esponja (7), Papel (8), Ar (9), ¡gua (10), Drag„o (11), DemÙnio (12), Trov„o (13) |
-| **Esponja (7)** | Papel (8), Ar (9), ¡gua (10), Drag„o (11), DemÙnio (12), Trov„o (13), Arma (14) |
-| **Papel (8)** | Ar (9), ¡gua (10), Drag„o (11), DemÙnio (12), Trov„o (13), Arma (14), Pedra (0) |
-| **Ar (9)** | ¡gua (10), Drag„o (11), DemÙnio (12), Trov„o (13), Arma (14), Pedra (0), Fogo (1) |
-| **¡gua (10)** | Drag„o (11), DemÙnio (12), Trov„o (13), Arma (14), Pedra (0), Fogo (1), Tesoura (2) |
-| **Drag„o (11)** | DemÙnio (12), Trov„o (13), Arma (14), Pedra (0), Fogo (1), Tesoura (2), Cobra (3) |
-| **DemÙnio (12)** | Trov„o (13), Arma (14), Pedra (0), Fogo (1), Tesoura (2), Cobra (3), Humano (4) |
-| **Trov„o (13)** | Arma (14), Pedra (0), Fogo (1), Tesoura (2), Cobra (3), Humano (4), ¡rvore (5) |
-| **Arma (14)** | Pedra (0), Fogo (1), Tesoura (2), Cobra (3), Humano (4), ¡rvore (5), Lobo (6) |
+| **Pedra (0)** | Fogo (1), Tesoura (2), Cobra (3), Humano (4), √Årvore (5), Lobo (6), Esponja (7) |
+| **Fogo (1)** | Tesoura (2), Cobra (3), Humano (4), √Årvore (5), Lobo (6), Esponja (7), Papel (8) |
+| **Tesoura (2)** | Cobra (3), Humano (4), √Årvore (5), Lobo (6), Esponja (7), Papel (8), Ar (9) |
+| **Cobra (3)** | Humano (4), √Årvore (5), Lobo (6), Esponja (7), Papel (8), Ar (9), √Ågua (10) |
+| **Humano (4)** | √Årvore (5), Lobo (6), Esponja (7), Papel (8), Ar (9), √Ågua (10), Drag√£o (11) |
+| **√Årvore (5)** | Lobo (6), Esponja (7), Papel (8), Ar (9), √Ågua (10), Drag√£o (11), Dem√¥nio (12) |
+| **Lobo (6)** | Esponja (7), Papel (8), Ar (9), √Ågua (10), Drag√£o (11), Dem√¥nio (12), Trov√£o (13) |
+| **Esponja (7)** | Papel (8), Ar (9), √Ågua (10), Drag√£o (11), Dem√¥nio (12), Trov√£o (13), Arma (14) |
+| **Papel (8)** | Ar (9), √Ågua (10), Drag√£o (11), Dem√¥nio (12), Trov√£o (13), Arma (14), Pedra (0) |
+| **Ar (9)** | √Ågua (10), Drag√£o (11), Dem√¥nio (12), Trov√£o (13), Arma (14), Pedra (0), Fogo (1) |
+| **√Ågua (10)** | Drag√£o (11), Dem√¥nio (12), Trov√£o (13), Arma (14), Pedra (0), Fogo (1), Tesoura (2) |
+| **Drag√£o (11)** | Dem√¥nio (12), Trov√£o (13), Arma (14), Pedra (0), Fogo (1), Tesoura (2), Cobra (3) |
+| **Dem√¥nio (12)** | Trov√£o (13), Arma (14), Pedra (0), Fogo (1), Tesoura (2), Cobra (3), Humano (4) |
+| **Trov√£o (13)** | Arma (14), Pedra (0), Fogo (1), Tesoura (2), Cobra (3), Humano (4), √Årvore (5) |
+| **Arma (14)** | Pedra (0), Fogo (1), Tesoura (2), Cobra (3), Humano (4), √Årvore (5), Lobo (6) |
 
 
-## InjeÁ„o de DependÍncia
+## Inje√ß√£o de Depend√™ncia
 
 O projeto usa o container de DI nativo do .NET e pode registrar automaticamente as classes que implementam `ITipo`.
 
@@ -74,7 +74,7 @@ O projeto usa o container de DI nativo do .NET e pode registrar automaticamente 
 
 dotnet add package Scrutor
 
-### ExecuÁ„o via CLI
+### Execu√ß√£o via CLI
 
 dotnet run
 
@@ -84,7 +84,7 @@ Digite a jogada do Jogador 1 (0-14): 0
 Digite a jogada do Jogador 2 (0-14): 11
 
 Jogador 1 escolheu: Pedra
-Jogador 2 escolheu: Drag„o
+Jogador 2 escolheu: Drag√£o
 
 Resultado: Jogador 2 venceu!
 
@@ -98,9 +98,9 @@ Defina em um array os tipos que ela vence.
 
 Adicione o novo valor no enum Jogada.
 
-Nenhuma alteraÁ„o no restante do cÛdigo ser· necess·ria.
+Nenhuma altera√ß√£o no restante do c√≥digo ser√° necess√°ria.
 
-### Padrıes aplicados
+### Padr√µes aplicados
 
 DDD (Domain-Driven Design)
 
@@ -108,21 +108,21 @@ Entidades Ricas
 
 Factory Pattern
 
-InjeÁ„o de DependÍncia
+Inje√ß√£o de Depend√™ncia
 
-Responsabilidade ⁄nica (SRP - SOLID)
+Responsabilidade √önica (SRP - SOLID)
 
 ### Autor
 
 Projeto desenvolvido em .NET 9 / C#, com foco em:
 
-Design orientado a domÌnio
+Design orientado a dom√≠nio
 
-Boas pr·ticas de arquitetura
+Boas pr√°ticas de arquitetura
 
-InteraÁ„o via linha de comando
+Intera√ß√£o via linha de comando
 
-DemonstraÁ„o de DI, enums e factories
+Demonstra√ß√£o de DI, enums e factories
 
 
 
